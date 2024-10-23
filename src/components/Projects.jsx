@@ -61,13 +61,13 @@ const ProjectCard = ({ project }) => {
         <img src={project.image} alt="" className="w-full cursor-pointer rounded-2xl transition-all duration-300 hover:scale-105 md:w-[300px]" />
         <div className="flex flex-col gap-5">
           <div className="flex flex-col gap-3">
-            <div className="text-xl font-semibold">{project.title}</div>
-            <p className="text-gray-400">{project.description}</p>
+            <div className="text-xl font-semibold text-red-500">{project.title}</div>
+            <p className=" text-gray-500">{project.description}</p>
           </div>
           <div className="flex flex-wrap gap-5">
             {
               project.technologies.map((tech, index) => (
-                <span key={index} className="rounded-lg bg-black p-3">
+                <span key={index} className="border text-white border-red-500 rounded-lg bg-black/50 p-3">
                   {tech}
                 </span>
               ))
@@ -86,9 +86,9 @@ const Projects = () => {
 
     <div id="project" className="flex min-h-screen w-full flex-col items-center justify-center gap-16 p-4 md:px-14 md:py-24">
       <ScrollReveal>
-        <h1 className="text-4xl font-light text-white md:text-6xl">My Projects</h1>
+        <h1 className="text-4xl font-light text-gray-500 md:text-6xl">My Projects</h1>
       </ScrollReveal>
-      <div className="flex w-full max-w-[1000px] flex-col gap-16 text-white">
+      <div className="flex w-full max-w-[1000px] flex-col gap-16 text-gray-500">
         {
           projectsData.map((project, index) => (
             <ProjectCard key={index} project={project} />
